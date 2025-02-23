@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/screenmode.css" />
+    <link rel="stylesheet" href="static/css/bot-selection.css">
+</head>
+<body>
+  <div class="nav">
+    <div class="logo"><a href="index.html">virtual AI</a><img src="" alt="" /></div>
+    <div class="headcon">
+      <div class="theme-toggle-container">
+        <input type="checkbox" id="themeToggle" />
+        <label for="themeToggle" class="theme-toggle">
+          <div class="sun-moon">
+            <div class="sun"><div class="name">Light</div></div>
+            <div class="moon"><div class="name">Dark</div></div>
+          </div>
+        </label>
+      </div>
+      <div class="headcon1">Product</div>
+      <div class="headcon2"><a href="terms.html">Terms</a></div>
+      <div class="headcon3">About us</div>
+      <div class="headcon4">
+        <button class="btn">
+          <i class="animation"></i>LOGIN<i class="animation"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="selection">
+      <div class="heading">Welcome to <b> virtual AI </b> </div>
+      <div class="options">
+        <div class="text-chatbot">  <a href="{{ url_for('chatbot') }}">          <img src="{{ url_for('static', filename='assets/chatbot.svg') }}" alt="Robo" /></a></div>
+        <div class="chatbot-3d"><img src="{{ url_for('static', filename='assets/human.svg') }}" alt="Robo" /></div>
+        <div class="pdf-chatbot">  <a href="{{ url_for('pdfchatbot') }}"><img src="{{ url_for('static', filename='assets/pdf.svg') }}" alt="Robo" /></a></div>
+        <div class="image-chatbot"> <a href="{{ url_for('pdfchatbot') }}"><img src="{{ url_for('static', filename='assets/image.svg') }}" alt="Robo" /></a></div>
+        <div class="school-chatbot"> <a href="{{ url_for('school') }}"><img src="{{ url_for('static', filename='assets/school.svg') }}" alt="Robo" /></a></div>
+      </div>
+      <div class="options-desc">
+       <div class="text-chatbot-desc">normal</div>
+       <div class="chatbot-3d-desc">3d chatbot</div>
+       <div class="pdf-chatbot-desc">pdf chatbot</div>
+       <div class="image-chatbot-desc">image chatbot</div>
+       <div class="school-chatbot-desc">school chatbot</div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="static/js/script.js"></script>
+</html>

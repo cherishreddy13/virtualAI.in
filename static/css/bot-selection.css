@@ -1,0 +1,209 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body {
+   background-color: white;
+   color: black;
+   font-family: "Roboto Condensed", sans-serif;
+   transition: background-color 0.3s, color 0.3s;
+ }
+ 
+ body.dark {
+   background-color: black;
+   color: white;
+ }
+
+b{
+   font-family: "Doto", sans-serif;
+   font-weight: 600;
+   letter-spacing: 2px;
+}
+hr{
+   border-color: rgba(137, 43, 226, 0.299);
+}
+.nav{
+   display: flex;
+   height: 13vh;
+   align-items: center;
+}
+.logo{
+   width: 50%;
+}
+.headcon{
+   margin-left: 13vw;
+   display: flex;
+   gap: 3vw;
+}
+.logo{
+   font-size: 40px;
+   color: #536493;
+   position: relative;
+   right: -5vw;
+   font-family: "Doto", sans-serif;
+   font-weight: 700;
+}
+.logo a{
+   text-decoration: none;
+}
+.headcon1{
+   font-size: 20px;
+   color: #536493;
+}
+.headcon2{
+   font-size: 20px;
+   color: #536493;
+}
+.headcon3{
+   font-size: 20px;
+   color: #536493;
+}
+.headcon4 .btn {
+   outline: 0;
+   display: inline-flex;
+   align-items: center;
+   justify-content: space-between;
+   background: #4c5f91;
+   min-width: 100px;
+   border: 0;
+   border-radius: 4px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+   box-sizing: border-box;
+   padding: 10px 14px;
+   color: #fff;
+   font-size: 12px;
+   font-weight: 600;
+   letter-spacing: 1.2px;
+   text-transform: uppercase;
+   overflow: hidden;
+   cursor: pointer;
+   position: relative;
+   top: -0.5vh;
+    }
+ 
+ .headcon4.btn:hover {
+   opacity: .95;
+ }
+ 
+ .headcon4 .btn .animation {
+   border-radius: 100%;
+   animation: ripple 0.6s linear infinite;
+ }
+ 
+ @keyframes ripple {
+   0% {
+     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+   }
+ 
+   100% {
+     box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+   }
+ }
+ .heading{
+   text-align: center;
+   font-size: 50px;
+   position: relative;
+   top: 3vh;
+   color:  #576487;
+   margin-bottom: 1vh;
+ }
+ .options{
+   display: flex;
+   width: max-content;
+   gap: 140px;
+   position: relative;
+   left: 4vw;
+   top: 13vh;
+ }
+ .text-chatbot img{
+   height: max-content;
+   width: 120px;
+   border-style: solid;
+   border-radius: 100%;
+   padding: 20px 20px;
+   color:  #536493;
+   /* color:  #163897; */
+  }
+ .chatbot-3d img{
+   height: max-content;
+   width: 120px;
+   border-style: solid;
+   border-radius: 100%;
+   padding: 20px 20px;
+   color:  #536493;
+ }
+ .pdf-chatbot img{
+   height: max-content;
+   width: 120px;
+   border-style: solid;
+   border-radius: 100%;
+   padding: 20px 20px;
+   color:  #536493;
+ }
+ .image-chatbot img{
+   height: max-content;
+   width: 120px;
+   border-style: solid;
+   border-radius: 100%;
+   padding: 20px 20px;
+   color:  #536493;
+ }
+ .school-chatbot img{
+   height: max-content;
+   width: 120px;
+   border-style: solid;
+   border-radius: 100%;
+   padding: 20px 20px;
+   color:  #536493;
+ }
+ .options img ,.options-desc div {                            
+  transition: transform 0.3s;                
+}
+.options img:hover{
+  transform: scale(1.2);                     
+}
+ .options-desc{
+   display: flex;
+   width: max-content;
+   gap: 160px;
+   position: relative;
+   left: 4.8vw;
+   top: 15vh;
+   font-size: 30px;
+   color:  #536493;
+ }
+ .pdf-chatbot-desc{
+   position: relative;
+   left: -1.5vw;
+ }
+ .image-chatbot-desc{
+   position: relative;
+   left: -4.7vw;
+ }
+ .school-chatbot-desc{
+   position: relative;
+   left: -10vw;
+ }
+ .selection{
+  position: relative;
+  top: 14vh;
+  left: 6vw;
+  border-radius: 30px;
+  height: 53vh;
+  width:89vw;
+  background: rgba(0, 0, 0, 0.105);
+  z-index: 2px;
+  backdrop-filter: blur(8px); 
+  }
+ .chat {
+    background-image: url('/assets/chatbot-bg.png'); 
+    background-size: cover;                 
+    background-repeat: no-repeat;               
+    background-position: center;                 
+    height: 85vh;                                 
+    width: 99vw;                          
+    justify-content: center;                    
+    align-items: center;                         
+    position: relative;
+  }

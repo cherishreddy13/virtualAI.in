@@ -1,0 +1,112 @@
+*::-webkit-scrollbar {
+   width: 2px;
+ }
+
+ *::-webkit-scrollbar-track {
+   background: #ffffff;
+ }
+
+ *::-webkit-scrollbar-thumb {
+   background-color: #536493;
+   border-radius: 7px;
+   border: 1px  #ffffff;
+ }
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body {
+   color: #7e87a1;
+   font-family: "Roboto Condensed", sans-serif;
+   transition: background-color 0.3s, color 0.3s;
+ }
+ 
+ body.dark {
+   background-color: black;
+   color: white;
+ }
+b{
+   font-family: "Doto", sans-serif;
+   font-weight: 600;
+   color: #364890;
+}
+.logo a{
+   text-decoration: none;
+   font-family: "Doto", sans-serif;
+   font-weight: 600;
+   color: #364890;
+}
+
+.chat-container {
+   width: 200vh;
+   height: 75vh;
+   margin: 50px auto;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   /* border-style: dotted; */
+}
+
+/* Styling for the messages */
+.messages {
+   
+   height:70vh ;
+   max-height: 400px;
+   overflow-y: auto;
+   margin-bottom: 10px;
+}
+
+/* Styling for the individual message */
+.message {
+   padding: 10px;
+   margin-bottom: 15px;
+   border-radius: 10px;
+   font-size: 16px;
+   max-width: 90%;
+}
+
+/* User's message on the right */
+.message.user {
+   text-align: right;
+   margin-left: auto;
+   border-radius: 10px 10px 0 10px;
+}
+
+/* Bot's message on the left */
+.message.bot {
+   color: blueviolet;
+   text-align: left;
+   margin-right: auto;
+   border-radius: 10px 10px 10px 0;
+}
+
+/* Input form styling */
+#chat-form {
+   display: flex;
+   justify-content: space-between;
+}
+
+#user-input {
+   width: 85%;
+   padding: 10px;
+   border: 1px solid rgb(146, 101, 188);
+   border-radius: 5px;
+   font-size: 14px;
+   background-color: transparent;
+}
+
+button {
+   width: 10%;
+   padding: 10px;
+   background-color: #4CAF50;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   font-size: 14px;
+}
+
+button:hover {
+   background-color: #45a049;
+}

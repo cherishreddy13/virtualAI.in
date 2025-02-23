@@ -1,0 +1,43 @@
+body{
+   overflow-x: hidden;
+}
+.container {
+   width: 50%;
+   margin: auto;
+   background: white;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   margin-top: 50px;
+   position: relative;
+   left: -20vw;
+   top: -10vh;
+}
+
+.chat-container {
+   margin-top: 10px;
+   border: 1px solid #ddd;
+   padding: 10px;
+   border-radius: 5px;
+   background: #fff;
+}
+
+#chat-box {
+   height: 50px;
+   padding: 10px;
+   border-bottom: 1px solid #ddd;
+}
+
+.user-message {
+   background: #d1e7fd;
+   padding: 5px;
+   margin: 5px;
+   border-radius: 5px;
+}
+
+.bot-message {
+   background: #fdd1d1;
+   padding: 5px;
+   margin: 5px;
+   border-radius: 5px;
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css"
+    />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/screenmode.css" />
+    <link rel="stylesheet" href="/static/css/chatbot.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/screenmode.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/schoolchatbot.css') }}">
+
+</head>
+<body>
+    
+   <div class="nav">
+    <div class="logo"><a href="{{ url_for('index') }}"><b>virtual AI</b></a><img src="" alt="" /></div>
+    <div class="headcon">
+        <div class="theme-toggle-container">
+          <input type="checkbox" id="themeToggle" />
+          <label for="themeToggle" class="theme-toggle">
+            <div class="sun-moon">
+              <div class="sun"><div class="name">Light</div></div>
+              <div class="moon"><div class="name">Dark</div></div>
+            </div>
+          </label>
+        </div>
+        <div class="headcon1">Product</div>
+        <div class="headcon2"><a href="terms.html">Terms</a></div>
+        <div class="headcon3">About us</div>
+        <div class="headcon4">
+        </div>
+      </div></div>
+    <div class="container">
+        <h1>Educational Chatbot</h1>
+
+        <label for="classSelect">Choose a Class:</label>
+<select id="classSelect" onchange="updateSubjects()">
+    <option value="10th">10th</option>
+    <option value="11th">11th</option>
+    <option value="12th">12th</option>
+</select>
+
+<label for="subjectSelect">Choose a Subject:</label>
+<select id="subjectSelect">
+    <!-- Options will be dynamically updated -->
+</select>
+
+        <input type="text" id="userQuestion" placeholder="Ask a question...">
+        <button onclick="askQuestion()">Ask</button>
+
+        <div id="chat-box"></div>
+    </div>
+
+    <script>
+        const subjects = {
+            "10th": ["Maths", "Science", "History"],
+            "11th": ["Physics", "Chemistry", "Biology"],
+            "12th": ["Calculus", "Economics", "Political Science"]
+        };
+    
+        function updateSubjects() {
+            let classSelected = document.getElementById("classSelect").value;
+            let subjectSelect = document.getElementById("subjectSelect");
+            subjectSelect.innerHTML = ""; // Clear existing options
+    
+            subjects[classSelected].forEach(subject => {
+                let option = document.createElement("option");
+                option.value = subject;
+                option.textContent = subject;
+                subjectSelect.appendChild(option);
+            });
+        }
+    
+        // Initialize subjects on page load
+        updateSubjects();
+        function askQuestion() {
+            const selectedClass = document.getElementById("classSelect").value;
+            const selectedSubject = document.getElementById("subjectSelect").value;
+            const userQuestion = document.getElementById("userQuestion").value;
+            const chatBox = document.getElementById("chat-box");
+
+            if (!userQuestion.trim()) {
+                alert("Please enter a question.");
+                return;
+            }
+
+            chatBox.innerHTML += `<div class="user-message">You: ${userQuestion}</div>`;
+
+            fetch("/ask", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ 
+                    selected_class: selectedClass, 
+                    selected_subject: selectedSubject, 
+                    question: userQuestion 
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                chatBox.innerHTML += `<div class="bot-message">Bot: ${data.answer}</div>`;
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                chatBox.innerHTML += `<div class="bot-message">Bot: Sorry, something went wrong.</div>`;
+            });
+
+            document.getElementById("userQuestion").value = "";
+        }
+    </script>
+    <script src="/static/js/script.js"></script>
+
+</body>
+</html>
