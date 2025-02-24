@@ -4,12 +4,11 @@ import pdfplumber
 import PyPDF2
 import nltk
 from flask import Flask, render_template, request, jsonify
-
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from handlers.routes import configure_routes
 
-
-
+configure_routes(app)
 # Initialize Flask app
 app = Flask(__name__, static_url_path='/static')  # ✅ Ensures static files are served correctly
 
