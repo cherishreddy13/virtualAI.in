@@ -4,17 +4,22 @@ import pdfplumber
 import PyPDF2
 import nltk
 from flask import Flask, render_template, request, jsonify
+
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from handlers.routes import configure_routes
 
-configure_routes(app)
+
+
 # Initialize Flask app
 app = Flask(__name__, static_url_path='/static')  # ✅ Ensures static files are served correctly
 
 # Initialize Cohere API (Replace with your API key)
 co = cohere.Client('dSe5i608cTtTQli1JJ15e9N60zmY8uFI8sHRFmau')  # Replace with your Cohere API key
 
+# ✅ Home route (renders the main index.html)
+@app.route("/")
+def index():
+    return render_template("index.html")
 # ✅ Route for Cohere Chatbot Interaction
 @app.route("/ask", methods=["POST"])
 def ask():
@@ -39,11 +44,6 @@ def ask():
         print(f"Error: {e}")
         return jsonify({"answer": "An error occurred while processing your request."}), 500
 
-
-# ✅ Home route (renders the main index.html)
-@app.route("/")
-def index():
-    return render_template("index.html")
 
 
 # ✅ Routes to serve static pages
