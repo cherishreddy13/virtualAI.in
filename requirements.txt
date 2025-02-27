@@ -1,4 +1,4 @@
-﻿Flask==3.0.0
+Flask==3.0.0
 Flask-Cors==4.0.0
 Flask-Bcrypt==1.0.1
 Flask-PyMongo==2.3.0
@@ -9,6 +9,9 @@ openai==1.10.0
 bcrypt==4.1.2
 cryptography==42.0.5
 gunicorn==21.2.0
-cohere
-pdfplumber
-PyPDF2
+cohere==4.36
+pdfplumber==0.10.3
+PyPDF2==3.0.1
+nltk==3.8.1
+scikit-learn==1.4.0
+numpy==1.26.4
